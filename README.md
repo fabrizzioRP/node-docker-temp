@@ -7,5 +7,5 @@ npm install
 
 2. File .env : 
 ```
-HOST= <localhost ó Ip>
+HOSTPG= <localhost ó Ip>
 ```
