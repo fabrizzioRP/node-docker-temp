@@ -1,11 +1,9 @@
 # Docker, Node & Postgress
 
-1. Run this command :
+- Run these commands :
 ```
 npm install 
 ```
-
-2. File .env : 
 ```
-HOSTPG= <localhost ó Ip>
+docker-compose up --build
 ```

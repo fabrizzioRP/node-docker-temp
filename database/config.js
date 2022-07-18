@@ -5,11 +5,11 @@ const connectPg = () => {
 
     try{
         const pool = new Pool({
-            host: process.env.HOSTPG,
-            user: process.env.USERPG,
-            password: process.env.PASSWORDPG,
-            database: process.env.DATABASEPG,
-            port: process.env.PORTPG
+            host: "postgres",
+            user: "postgres",
+            password: "root",
+            database: "test",
+            port: 5432
         });
         console.log("CONNECTED DATABASE :)");
         return pool;

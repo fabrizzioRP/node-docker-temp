@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  # Node
+  app: 
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+    volumes:
+      # Maps our current project directory `.` to
+      # our working directory in the container
+      - ./:/app
+      # node_modules workaround for volumes
+      - /app/node_modules
+  # Postgres
+  postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=test
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./myquery.sql:/docker-entrypoint-initdb.d/myquery.sql
+
+# docker-compose up --build
+# docker-compose down
